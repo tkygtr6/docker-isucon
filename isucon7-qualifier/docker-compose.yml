@@ -6,6 +6,8 @@ services:
       args:
         GIT_URL: https://github.com/isucon/isucon7-qualify.git
     image: isucon7-qualifier-bench
+    volumes:
+      - ./isucon7-qualify:/home/isucon/isubata
     depends_on:
       - web
     networks:
@@ -16,6 +18,8 @@ services:
       args:
         GIT_URL: https://github.com/isucon/isucon7-qualify.git
     image: isucon7-qualifier-web:nginx
+    volumes:
+      - ./isucon7-qualify:/isubata
     networks:
       - frontend
       - backend
@@ -37,6 +41,8 @@ services:
     #image: isucon7-qualifier-app:perl
     image: isucon7-qualifier-app:python
     #image: isucon7-qualifier-app:ruby
+    volumes:
+      - ./isucon7-qualify:/home/isucon/isubata
     networks:
       - backend
     depends_on:
@@ -53,6 +59,8 @@ services:
       args:
         GIT_URL: https://github.com/isucon/isucon7-qualify.git
     image: isucon7-qualifier-db
+    volumes:
+      - ./isucon7-qualify:/home/isucon/isubata
     ports:
       - "3306"
     networks:

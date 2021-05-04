@@ -4,7 +4,6 @@ ARG GIT_URL=https://github.com/isucon/isucon7-qualify.git
 
 RUN \
   apk --no-cache add git && \
-  git clone --depth=1 $GIT_URL /isubata && \
   rm -rf /isubata/.git
 
 FROM nginx:1.10
