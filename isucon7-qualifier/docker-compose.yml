@@ -10,6 +10,11 @@ services:
       - web
     networks:
       - frontend
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1g
   web:
     build:
       context: ./docker/web
@@ -23,6 +28,11 @@ services:
       - app
     ports:
       - "80:80"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1g
   app:
     build:
       #context: ./docker/app/golang
@@ -47,6 +57,11 @@ services:
       ISUBATA_DB_USER: isucon
       ISUBATA_DB_PASSWORD: isucon
       ISUBATA_DB_HOST: db
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1g
   db:
     build:
       context: ./docker/db
@@ -63,6 +78,11 @@ services:
       #MYSQL_DATABASE: isubata
       #MYSQL_USER: isucon
       #MYSQL_PASSWORD: isucon
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1g
 networks:
   frontend:
   backend:
