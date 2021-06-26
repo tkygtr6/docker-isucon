@@ -28,6 +28,10 @@ services:
       - app
     ports:
       - "80:80"
+    environment:
+      ISUBATA_DB_USER: isucon
+      ISUBATA_DB_PASSWORD: isucon
+      ISUBATA_DB_HOST: db
     deploy:
       resources:
         limits:

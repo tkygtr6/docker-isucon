@@ -17,7 +17,8 @@ RUN rm -rf /etc/nginx/nginx.conf
 RUN rm -rf /etc/nginx/conf.d
 RUN ln -s /home/isucon/isubata/files/web/nginx.conf /etc/nginx/nginx.conf
 RUN ln -s /home/isucon/isubata/files/web/conf.d /etc/nginx/conf.d
+# RUN nginx
 
 EXPOSE 5000
 
-ENTRYPOINT ["nginx"]
+ENTRYPOINT ["sleep", "infinity"]
